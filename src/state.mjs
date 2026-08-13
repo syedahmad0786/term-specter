@@ -2,7 +2,7 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 
-export const HUB_URL = 'https://fun-toys.vercel.app'
+export const HUB_URL = 'https://fun-toys-alpha.vercel.app'
 
 /** @returns {string} */
 export function statePath() {

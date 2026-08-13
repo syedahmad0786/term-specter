@@ -49,7 +49,7 @@ specter --pack=chaotic duck
 
 On first run it prints the toy hub once:
 
-https://fun-toys.vercel.app
+https://fun-toys-alpha.vercel.app
 
 After that it keeps quiet. State lives in `~/.term-specter.json`.
 
