@@ -6,6 +6,10 @@ Mix of dad jokes, oddly accurate observations, philosophical nonsense, and the o
 
 ## Try it
 
+Live haunt: https://term-specter.vercel.app
+
+Also:
+
 ```bash
 npx github:syedahmad0786/term-specter
 ```

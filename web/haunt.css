@@ -1,10 +1,16 @@
+@import "./kit/overlays.css";
+@import "./kit/tokens.css";
+
 :root {
-  --bg: #1a1220;
+  --bg: #120818;
   --fg: #e8d4f0;
   --mute: #8a6a94;
   --acc: #c9a0dc;
+  --bezel: #2a1834;
 }
+
 * { box-sizing: border-box; }
+
 html, body {
   margin: 0;
   min-height: 100%;
@@ -12,12 +18,70 @@ html, body {
   color: var(--fg);
   font-family: "IBM Plex Mono", ui-monospace, monospace;
 }
-body { padding: 2rem 1.2rem 4.5rem; }
-header { max-width: 44rem; margin: 0 auto 1.5rem; }
-.acc { letter-spacing: 0.18em; font-size: 0.72rem; color: var(--acc); }
-h1 { font-weight: 500; font-size: 1.6rem; margin: 0.2rem 0; }
+
+body {
+  padding: 2rem 1.2rem 4.5rem;
+  background:
+    radial-gradient(700px 380px at 50% -10%, #3a2048, transparent 60%),
+    var(--bg);
+}
+
+.scan {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  opacity: 0.16;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(201, 160, 220, 0.12) 0,
+    rgba(201, 160, 220, 0.12) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+}
+
+header {
+  max-width: 44rem;
+  margin: 0 auto 1.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  align-items: start;
+}
+
+.mark {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  box-shadow: 0 0 24px #c9a0dc44;
+}
+
+.acc { letter-spacing: 0.18em; font-size: 0.72rem; color: var(--acc); margin: 0 0 6px; }
+h1 { font-weight: 500; font-size: 1.8rem; margin: 0.2rem 0; letter-spacing: 0.08em; }
 .sub, .hint { color: var(--mute); font-size: 0.85rem; }
-main { max-width: 44rem; margin: 0 auto; }
+
+main {
+  max-width: 44rem;
+  margin: 0 auto;
+  perspective: 1200px;
+}
+
+.terminal {
+  --rx: 6deg;
+  --ry: 0deg;
+  --z: 0px;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--z));
+  transform-style: preserve-3d;
+  background: linear-gradient(180deg, #2a1834, #140e18);
+  border: 1px solid #5a3a6a;
+  box-shadow:
+    inset 0 1px 0 #e8d4f044,
+    inset 0 -20px 40px #0008,
+    0 28px 50px #0006;
+  padding: 14px;
+}
+
 .log {
   min-height: 42vh;
   border: 1px solid #3a2844;
@@ -25,15 +89,22 @@ main { max-width: 44rem; margin: 0 auto; }
   white-space: pre-wrap;
   line-height: 1.55;
   margin-bottom: 0.8rem;
+  background: #0c0810;
+  box-shadow: inset 0 0 40px #c9a0dc14;
+  text-shadow: 0 0 8px #c9a0dc33;
 }
+
 .log .you { color: var(--mute); }
 .log .ghost { color: var(--fg); }
+
 form {
   display: flex;
   gap: 0.6rem;
   align-items: center;
 }
+
 .ps { color: var(--acc); }
+
 input {
   flex: 1;
   background: transparent;
@@ -43,13 +114,23 @@ input {
   font: inherit;
   padding: 0.5rem 0;
 }
+
 .webring {
   position: fixed;
-  left: 0; right: 0; bottom: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
   text-align: center;
   padding: 0.7rem;
   background: #140e18;
   font-size: 0.75rem;
 }
+
 .webring a { color: var(--acc); text-decoration: none; }
 code { color: var(--acc); }
+
+@media (prefers-reduced-motion: reduce) {
+  .terminal { transform: none; }
+  .scan { display: none; }
+}

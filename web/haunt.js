@@ -56,6 +56,24 @@ function reply(text) {
 line("ghost", "specter: present. barely. that's the brand.");
 input.focus();
 
+const terminal = document.getElementById("terminal");
+const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (terminal && !reduce) {
+  terminal.addEventListener("pointermove", (e) => {
+    const r = terminal.getBoundingClientRect();
+    const px = (e.clientX - r.left) / r.width - 0.5;
+    const py = (e.clientY - r.top) / r.height - 0.5;
+    terminal.style.setProperty("--rx", `${(6 - py * 8).toFixed(2)}deg`);
+    terminal.style.setProperty("--ry", `${(px * 10).toFixed(2)}deg`);
+    terminal.style.setProperty("--z", "14px");
+  });
+  terminal.addEventListener("pointerleave", () => {
+    terminal.style.setProperty("--rx", "6deg");
+    terminal.style.setProperty("--ry", "0deg");
+    terminal.style.setProperty("--z", "0px");
+  });
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   const text = input.value.trim();

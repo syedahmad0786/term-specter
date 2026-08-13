@@ -1,0 +1,26 @@
+{
+  "name": "Specter",
+  "short_name": "Specter",
+  "description": "A haunt in the browser",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1220",
+  "theme_color": "#1a1220",
+  "icons": [
+    {
+      "src": "./favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "./favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "./apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

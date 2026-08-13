@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Specter — a haunt in the browser</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta property="og:image" content="./og.png" />
     <meta name="description" content="A terminal ghost. Type at it. It judges softly." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,23 +15,29 @@
     <link rel="stylesheet" href="./haunt.css" />
   </head>
   <body>
+    <div class="scan" aria-hidden="true"></div>
     <header>
-      <p class="acc">FT–006</p>
-      <h1>specter</h1>
-      <p class="sub">optional. non-intrusive. in your browser this time.</p>
+      <img class="mark" src="./logo.svg" width="48" height="48" alt="" />
+      <div>
+        <p class="acc">FT–006</p>
+        <h1>specter</h1>
+        <p class="sub">optional. non-intrusive. in your browser this time.</p>
+      </div>
     </header>
     <main>
-      <div id="log" class="log" aria-live="polite"></div>
-      <form id="prompt">
-        <label class="ps">❯</label>
-        <input id="line" autocomplete="off" spellcheck="false" placeholder="say something, or /pack sleepy" />
-      </form>
+      <div class="terminal" id="terminal">
+        <div id="log" class="log" aria-live="polite"></div>
+        <form id="prompt">
+          <label class="ps">❯</label>
+          <input id="line" autocomplete="off" spellcheck="false" placeholder="say something, or /pack sleepy" />
+        </form>
+      </div>
       <p class="hint">packs: default dad stoic chaotic judgmental sleepy · also <code>npx github:syedahmad0786/term-specter</code></p>
     </main>
     <footer class="webring">
       <a href="https://fun-toys-alpha.vercel.app">a Fun Toy</a>
       ·
-      <a href="https://ft-grandiose.vercel.app">prev</a>
+      <a href="https://grandiose-seven.vercel.app">prev</a>
       <a href="https://chimemoji.vercel.app">next</a>
     </footer>
     <script type="module" src="./haunt.js"></script>
