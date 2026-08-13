@@ -1,5 +1,5 @@
 /**
- * @typedef {'repl' | 'ask' | 'duck' | 'help' | 'unknown'} Command
+ * @typedef {'repl' | 'ask' | 'duck' | 'watch' | 'help' | 'unknown'} Command
  * @typedef {object} CliArgs
  * @property {Command} command
  * @property {string} text
@@ -9,7 +9,7 @@
  * @property {string} [unknown]
  */
 
-const COMMANDS = new Set(['ask', 'duck', 'help'])
+const COMMANDS = new Set(['ask', 'duck', 'help', 'watch'])
 
 /**
  * Parse argv into a small command object.

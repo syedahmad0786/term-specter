@@ -4,10 +4,11 @@ Usage:
   specter                 haunt this shell (REPL)
   specter ask "..."       one shot, then gone
   specter duck [prompt]   rubber-duck mode — it asks you
+  specter watch           mutter when files in cwd change
   specter help            this page
 
 Options:
-  --pack, -p <name>       default | dad | stoic | chaotic
+  --pack, -p <name>       default | dad | stoic | chaotic | judgmental | sleepy
   --quiet, -q             skip the first-run hub line
   --help, -h              same as help
 

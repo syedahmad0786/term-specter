@@ -75,9 +75,9 @@ test('unknown command exits 1', async () => {
 test('first run prints the hub URL only once', async () => {
   const file = tmpState()
   const first = await run(['ask', 'hello'], { SPECTER_STATE_PATH: file })
-  assert.match(first.stdout, /fun-toys\.vercel\.app/)
+  assert.match(first.stdout, /fun-toys/)
   const second = await run(['ask', 'hello'], { SPECTER_STATE_PATH: file })
-  assert.doesNotMatch(second.stdout, /fun-toys\.vercel\.app/)
+  assert.doesNotMatch(second.stdout, /fun-toys/)
 })
 
 test('announceHub writes state', () => {

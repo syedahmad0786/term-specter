@@ -19,7 +19,7 @@ const zero = () => 0
 
 test('packs on disk are complete', () => {
   const names = listPackNames()
-  assert.deepEqual(names, ['chaotic', 'dad', 'default', 'stoic'])
+  assert.deepEqual(names, ['chaotic', 'dad', 'default', 'judgmental', 'sleepy', 'stoic'])
   for (const name of names) {
     const pack = loadPack(name)
     assertPack(pack, name)

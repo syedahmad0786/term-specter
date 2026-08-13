@@ -4,6 +4,7 @@ import { parseArgv } from './args.mjs'
 import { resolvePack, createSpecter, defaultPacksDir } from './engine.mjs'
 import { announceHub } from './state.mjs'
 import { startRepl } from './repl.mjs'
+import { startWatch } from './watch.mjs'
 import { HELP } from './help.mjs'
 import { whisper, say } from './style.mjs'
 
@@ -34,6 +35,11 @@ async function main(args) {
   }
   if (args.command === 'duck' && !args.text) {
     await startRepl({ pack: resolved.pack, used: resolved.used, mode: 'duck' })
+    return
+  }
+  if (args.command === 'watch') {
+    const specter = createSpecter({ pack: resolved.pack, mode: 'talk' })
+    startWatch({ pack: resolved.pack, reply: (text) => specter.reply(text) })
     return
   }
   await oneShot(args, resolved)
