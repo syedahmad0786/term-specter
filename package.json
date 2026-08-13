@@ -1,0 +1,41 @@
+{
+  "name": "term-specter",
+  "version": "1.0.0",
+  "description": "A terminal ghost / philosophical rubber duck. Optional, non-intrusive.",
+  "type": "module",
+  "bin": {
+    "specter": "./src/cli.mjs",
+    "term-specter": "./src/cli.mjs"
+  },
+  "files": [
+    "src",
+    "packs",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "start": "node src/cli.mjs",
+    "specter": "node src/cli.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "cli",
+    "rubber-duck",
+    "terminal",
+    "ghost",
+    "repl"
+  ],
+  "author": "Ahmad Bukhari <ahmadbukhari4245@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syedahmad0786/term-specter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syedahmad0786/term-specter/issues"
+  },
+  "homepage": "https://github.com/syedahmad0786/term-specter#readme"
+}
